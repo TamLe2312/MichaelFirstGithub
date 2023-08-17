@@ -1,0 +1,31 @@
+.List_Todo_Container{
+    button {
+        cursor: pointer;
+    }
+    .Add_Todo{
+        input{
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .Add{
+            margin: 0 10px;
+        }
+    }
+    .List_ToDo_Content{
+        width: 400px;
+        margin: 0 auto;
+        .List_ToDo_Child{
+            &:first-child{
+                border-top: 1px solid silver;
+            }
+            height: 40px;
+            border-bottom: 1px solid silver;
+            margin: 10px;
+        }
+        .Edit {
+            margin: 0 10px;
+        }
+    }
+}
