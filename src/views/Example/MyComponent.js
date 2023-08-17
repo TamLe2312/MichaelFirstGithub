@@ -1,44 +1,43 @@
 import React from 'react';
 import ChildComponent from './ChildComponent';
+import AddComponent from './AddComponent';
 
 class MyComponent extends React.Component {
     state = {
-        fName: "",
-        lName: ""
+        arrJobs: [
+            { id: 'Job1', title: 'Chef', salary: '1000' },
+            { id: 'Job2', title: 'Developer', salary: '5000' },
+            { id: 'Job3', title: 'Tester', salary: '3000' }
+        ]
     }
-    handleChangeFirstName = (event) => {
+
+    addNewJob = (job) => {
+        console.log('Check job from parent : ', job)
+        let currentJob = this.state.arrJobs
+        currentJob.push(job)
         this.setState({
-            fName: event.target.value
+            /* arrJobs: [...this.state.arrJobs, job] */
+            arrJobs: currentJob
         })
     }
-    handleChangeLastName = (event) => {
+
+    DeleteJob = (job) => {
+        let currentJob = this.state.arrJobs
+        currentJob = currentJob.filter(item => item.id !== job.id)
         this.setState({
-            lName: event.target.value
+            arrJobs: currentJob
         })
-    }
-    handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(this.state)
     }
 
     render() {
         return (
             <>
-                <form>
-                    <label htmlFor="fname">First name:</label><br />
-                    <input type="text"
-                        value={this.state['fName']}
-                        onChange={(event) => this.handleChangeFirstName(event)} /><br />
-                    <label htmlFor="lname">Last name:</label><br />
-                    <input type="text"
-                        value={this.state['lName']}
-                        onChange={(event) => this.handleChangeLastName(event)}
-                    /><br /><br />
-                    <input type="submit"
-                        onClick={(event) => this.handleSubmit(event)}
-                    />
-                </form>
-                <ChildComponent name={'Michael'} age={'19'} />
+                <AddComponent
+                    addNewJob={this.addNewJob}
+                />
+                <ChildComponent arrJobs={this.state.arrJobs}
+                    DeleteJob={this.DeleteJob}
+                />
             </>
         )
     }
