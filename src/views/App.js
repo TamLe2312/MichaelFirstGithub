@@ -7,12 +7,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Nav from './Nav/Nav';
 import Home from './Example/Home';
+import ListUser from './User/ListUser';
+import DetailUser from './User/DetailUser';
 
 import {
   BrowserRouter,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -26,11 +27,17 @@ function App() {
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/ToDo">
+            <Route path="/todo">
               <ListToDo />
             </Route>
-            <Route path="/About">
+            <Route path="/about">
               <MyComponent></MyComponent>
+            </Route>
+            <Route path="/user" exact>
+              <ListUser></ListUser>
+            </Route>
+            <Route path="/user/:id">
+              <DetailUser></DetailUser>
             </Route>
           </Switch>
 

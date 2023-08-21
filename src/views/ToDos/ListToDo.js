@@ -101,7 +101,6 @@ class ListToDo extends React.Component {
                             })
                         }
                     </div>
-                    <p>Hello To Do List</p>
                 </div >
             </>
         );

@@ -1,8 +1,12 @@
-.btn-show{
-    color: white;
-    background-color: salmon;
+.btn {
+    color: #285467;
+    background-color: #8CD881;
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
     margin: 10px;
+}
+.btn:hover {
+background-color: #2FAF91;
+color: white;
 }

@@ -22,7 +22,7 @@ class ChildComponent extends React.Component {
         return (
             <>
                 {showJobs === false ?
-                    <button className='btn-show' onClick={() => this.handleShowJobs(true)}>Show</button>
+                    <button className='btn' onClick={() => this.handleShowJobs(true)}>Show</button>
                     :
                     <>
                         <div className='jobList'>
@@ -36,7 +36,7 @@ class ChildComponent extends React.Component {
                                 })
                             }
                         </div>
-                        <button onClick={() => this.handleShowJobs(false)}>Hide</button>
+                        <button className='btn' onClick={() => this.handleShowJobs(false)}>Hide</button>
                     </>
                 }
             </>

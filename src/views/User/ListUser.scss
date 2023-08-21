@@ -1,0 +1,39 @@
+.list_User_Container{
+    table {
+        margin: 20px auto;
+        tbody{
+            tr{
+                td{
+                    padding: 0 20px;
+                }
+                .Name{
+                    color: #8CD881;
+                    cursor: pointer;
+                }
+                .Name:hover{
+                    color: #2FAF91;
+                }
+            }
+        }
+    }
+}
+.Users{
+    padding: 15px;
+    font-size: 1.3rem;
+}
+.ImageUser{
+    margin: 15px;
+    width: 200px;
+}
+.btn {
+        color: #285467;
+        background-color: #8CD881;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        margin: 10px;
+}
+.btn:hover {
+    background-color: #2FAF91;
+    color: white;
+}
